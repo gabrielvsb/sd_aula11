@@ -1,4 +1,4 @@
-package br.com.comercio.autenticacao;
+package br.gov.auth;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

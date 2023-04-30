@@ -1,4 +1,4 @@
-package br.com.comercio.prefeitura;
+package br.gov.to.palmas.notafiscal;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

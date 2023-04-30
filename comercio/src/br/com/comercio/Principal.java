@@ -1,9 +1,10 @@
 package br.com.comercio;
 
+import java.math.BigDecimal;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-import br.com.comercio.autenticacao.Autenticacao;
+import br.gov.auth.Autenticacao;
 
 public class Principal {
     public static void main(String[] args) throws Exception {
@@ -11,7 +12,10 @@ public class Principal {
         
         Autenticacao auth = (Autenticacao) registry.lookup("Autenticacao");
         if(auth.logar("root", "1234") != null){
-            //vender
+            ComercioService comercio = new ComercioService();
+            BigDecimal venda = comercio.vender("IPHONE", 1);
+            
+            System.out.println("Venda Concluída. - " + venda);
         }
     }
 }
